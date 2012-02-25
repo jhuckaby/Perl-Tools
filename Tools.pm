@@ -555,7 +555,7 @@ sub follow_symlinks {
 
 sub get_remote_ip {
 	##
-	# Return the "true" remote IP address, even if request went through a NetCache
+	# Return the "true" remote IP address, even if request went through a cache
 	##
 	my $ip = $ENV{'REMOTE_ADDR'};
 	
@@ -568,8 +568,8 @@ sub get_remote_ip {
 
 sub get_user_agent {
 	##
-	# Get the user agent string, and tack on the NetCache Via header if found.
-	# In case NetApp phases out the Via header, also check the X-Flash-Version header
+	# Get the user agent string, and tack on the cache Via header if found.
+	# Also check the X-Flash-Version header
 	##
 	my $useragent = shift || $ENV{'HTTP_USER_AGENT'} || '';
 	
